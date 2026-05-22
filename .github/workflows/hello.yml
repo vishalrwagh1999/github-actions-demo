@@ -9,5 +9,5 @@ jobs:
   hello i am job name:
     runs-on: ubuntu-latest
     steps:
-      name: "my name is what"
+      name: my name is what
       run: echo "Vishal wagh on ubuntu $USER"
