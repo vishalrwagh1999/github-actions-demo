@@ -1,9 +1,12 @@
 ---
 name: Vishal Hello
-on:
-  push:
-    branches: 
-        main
+#on: every push it will run hence commented this 4 lines
+#  push:
+#    branches: 
+#        main
+on: 
+  workflow_dispatch
+  
 jobs:
   hello_i_am_job_name:
     runs-on: ubuntu-latest
