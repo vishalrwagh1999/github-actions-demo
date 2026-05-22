@@ -1,0 +1,29 @@
+name: CICD_without_orignal_comnmands
+
+on: 
+  workflow_dispatch
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the code
+        run: echo "git pull to get code" #orignal commands not added yet this is for practice only
+  build:
+      needs: [code]
+      runs-on: ubuntu-latest
+      steps:
+        - name: build the code
+          run: echo "mavne build" #orignal commands not added yet this is for practice only
+  test:
+      needs: [build]
+      runs-on: ubuntu-latest
+      steps:
+        - name: test using tivy or jemeter junit
+          run: echo "testing commands" #orignal commands not added yet this is for practice only
+  deploy:
+      needs: [build,test]
+      runs-on: ubuntu-latest
+      steps:
+        - name: deploy the code on server
+          run: echo "deploy the code on server ec2 or cloud" #orignal commands not added yet this is for practice only
