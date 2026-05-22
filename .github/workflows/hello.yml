@@ -2,7 +2,8 @@
 name: Vishal Hello
 on:
   push:
-    branches: main
+    branches: 
+        main
 jobs:
   hello_i_am_job_name:
     runs-on: ubuntu-latest
