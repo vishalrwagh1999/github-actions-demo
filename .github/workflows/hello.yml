@@ -10,3 +10,8 @@ jobs:
     steps:
        - name: my name is what
          run: echo "Vishal wagh on ubuntu $USER"
+  versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: version of docekr and python
+        run: docker --version && python --version
