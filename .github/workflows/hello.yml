@@ -4,7 +4,7 @@ on:
   push:
     branches: main
 jobs:
-  hello i am job name:
+  hello_i_am_job_name:
     runs-on: ubuntu-latest
     steps:
        - name: my name is what
