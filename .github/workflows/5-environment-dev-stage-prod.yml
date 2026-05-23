@@ -8,10 +8,10 @@ on:
         default: "dev"
         required: true
         type: choice
-          options:
-            - dev
-            - stage
-            - prod
+        options:
+          - dev
+          - stage
+          - prod
         
 
 jobs:
