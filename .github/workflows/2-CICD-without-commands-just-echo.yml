@@ -1,7 +1,7 @@
 name: CICD_without_orignal_comnmands
 
 on: 
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   code: #this is job name
