@@ -8,10 +8,10 @@ on:
 
 jobs:
   just_test_file:
-  runs_on: ubuntu-latest
-    steps:
-      - name: only line without work
-        run: echo "$USER  vishal wagh it runs on azure"
-      
-      - name: 2nd step in jobs
-        run: echo "2nd job step for this"
+    runs_on: ubuntu-latest
+      steps:
+        - name: only line without work
+          run: echo "$USER  vishal wagh it runs on azure"
+        
+        - name: 2nd step in jobs
+          run: echo "2nd job step for this"
