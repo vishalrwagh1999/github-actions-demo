@@ -3,12 +3,11 @@ name: just hello world
 on:
   push:
     branches: [main]
-
     workflow_dispatcher:
 
 jobs:
   just_test_file:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
       steps:
         - name: only line without work
           run: echo "$USER  vishal wagh it runs on azure"
