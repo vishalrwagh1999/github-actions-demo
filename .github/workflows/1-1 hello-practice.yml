@@ -8,7 +8,7 @@ on:
 
 jobs:
   just_test_file:
-  runs_on= ubuntu-latest
+  runs_on: ubuntu-latest
     steps:
       - name: only line without work
         run: echo "$USER  vishal wagh it runs on azure"
