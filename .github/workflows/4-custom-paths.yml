@@ -6,6 +6,7 @@ on:
     paths:
       - "**.html"
       - '**.yml'
+  workflow_dispatch:
 jobs:
   index_html_change_run:
     runs-on: ubuntu-latest
