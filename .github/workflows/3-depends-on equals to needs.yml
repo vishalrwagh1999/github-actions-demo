@@ -1,7 +1,7 @@
 name: CICD_with_needs_parameter
 
 on: 
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   code:
