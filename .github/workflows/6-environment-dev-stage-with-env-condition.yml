@@ -1,0 +1,42 @@
+name: CICD_with_dev_stage_prod_env_condition #run only i= env is dev or stage or prod using for loop and env condition.
+
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: which env you have to build please select from below
+        default: "stage"
+        required: true
+        type: choice
+        options:
+          - dev
+          - stage
+          - prod  
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the code
+        run: echo "git pull to get code" #orignal commands not added yet this is for practice only
+  build:
+      needs: [code] #inside job name we are specifying the needs parameter and inside that we are giving the name of job which is code because build job is dependent on code job
+      runs-on: ubuntu-latest
+      steps:
+        - name: build the code
+          run: echo "mavne build" #orignal commands not added yet this is for practice only
+  test:
+      needs: [build]
+      runs-on: ubuntu-latest
+      steps:
+        - name: test using tivy or jemeter junit
+          run: echo "testing commands" #orignal commands not added yet this is for practice only
+  deploy:
+      #if: ${{ github.event.inputs.environment == 'dev' || github.event.inputs.environment == 'stage' || github.event.inputs.environment == 'prod' }} #env condition for deploy job
+      #if: inputs.environment == 'dev' || inputs.environment == 'stage' || inputs.environment == 'prod' #env condition for deploy job
+      if: inputs.environment == 'stage' #env condition for deploy job on stage environment only
+      needs: [build,test]
+      runs-on: ubuntu-latest
+      steps:
+        - name: deploy the code on server
+          run: echo "deploy the code on server ec2 or cloud" #orignal commands not added yet this is for practice only
