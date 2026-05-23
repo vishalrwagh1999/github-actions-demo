@@ -10,7 +10,7 @@ jobs:
       - name: get the code
         run: echo "git pull to get code" #orignal commands not added yet this is for practice only
   build:
-      needs: [code]
+      needs: [code] #inside job name we are specifying the needs parameter and inside that we are giving the name of job which is code because build job is dependent on code job
       runs-on: ubuntu-latest
       steps:
         - name: build the code
