@@ -7,9 +7,9 @@ on:
       - "**.html"
       - '**.yml'
 jobs:
-  test:
+  index_html_change_run:
     runs-on: ubuntu-latest
     steps:
-      - name: get the code
-        run: echo "git pull to get code" #orignal commands not added yet this is for practice only
+      - name: after changing index.html file this job will run
+        run: echo "fter changing index.html file this job will run yessssssssss" #orignal commands not added yet this is for practice only
       
