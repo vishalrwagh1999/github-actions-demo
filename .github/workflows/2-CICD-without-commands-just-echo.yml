@@ -4,11 +4,12 @@ on:
   workflow_dispatch
 
 jobs:
-  code:
-    runs-on: ubuntu-latest
-    steps:
+  code: #this is job name
+    runs-on: ubuntu-latest # this is runner
+    steps: #steps inside code job and runner and same for all below job names build test deploy
       - name: get the code
         run: echo "git pull to get code" #orignal commands not added yet this is for practice only
+        
   build:
       runs-on: ubuntu-latest
       steps:
