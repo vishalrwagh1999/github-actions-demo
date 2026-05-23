@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-      description: which env you have to build please select from below
-      default: "dev"
-      required: true
-      type: choice
-        options:
-          - dev
-          - stage
-          - prod
-      
+        description: which env you have to build please select from below
+        default: "dev"
+        required: true
+        type: choice
+          options:
+            - dev
+            - stage
+            - prod
+        
 
 jobs:
   code: #this is job name
