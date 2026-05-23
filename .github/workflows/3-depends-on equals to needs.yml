@@ -1,4 +1,4 @@
-name: CICD_without_needs_parameter
+name: CICD_with_needs_parameter
 
 on: 
   workflow_dispatch
