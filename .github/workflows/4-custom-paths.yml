@@ -1,0 +1,15 @@
+name: custom paths is changes then run
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**.html"
+      - '**.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get the code
+        run: echo "git pull to get code" #orignal commands not added yet this is for practice only
+      
