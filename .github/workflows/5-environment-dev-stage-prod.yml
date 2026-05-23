@@ -1,4 +1,4 @@
-name: CICD_without_orignal_comnmands
+name: CICD_with_dev_stage_prod
 
 on: 
   workflow_dispatch:
