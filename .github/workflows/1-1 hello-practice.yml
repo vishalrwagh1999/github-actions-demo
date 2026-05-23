@@ -1,8 +1,8 @@
 name: just hello world
 
-on:
-  push:
-    branches: [main]
+#on:
+#  push:
+#    branches: [main]
   workflow_dispatch:
 jobs:
   just_test_file:
