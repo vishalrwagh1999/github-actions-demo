@@ -13,8 +13,9 @@ jobs:
         uses: docker/login-action@v4
         with:
           #registry: docker.io or ghcr.io or any other registry with the url - If not set then will default to Docker Hub
-          username: ${{ vars.DOCKER_USERNAME }}
+          username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v7
@@ -22,7 +23,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/python-flask-app-github-actions:latest                  #latest tag
-            ${{ secrets.DOCKER_USERNAME }}/python-flask-app-github-actions:${{ github.sha }}       #hash of the commit as tag
-            ${{ secrets.DOCKER_USERNAME }}/python-flask-app-github-actions:${{ github.ref_name }}  #branch name as tag
+            ${{ secrets.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:latest                  #latest tag
+            ${{ secrets.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:${{ github.sha }}       #hash of the commit as tag
+            ${{ secrets.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:${{ github.ref_name }}  #branch name as tag
 
