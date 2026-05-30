@@ -1,4 +1,4 @@
-name: CICD_with_dev_stage_prod_env_condition #run only i= env is dev or stage or prod using for loop and env condition.
+name: CICD_with_dev_stage_prod_env_multi_if-condition #run only i= env is dev or stage or prod using for loop and env condition.
 
 on: 
   workflow_dispatch:
