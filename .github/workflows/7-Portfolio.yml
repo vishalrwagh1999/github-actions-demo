@@ -7,4 +7,6 @@ jobs:
   portfolio-deploy:
     runs-on: ubuntu-latest
     steps:
-      - 
+      - name: code checkout
+        uses: actions/checkout@v4
+        
