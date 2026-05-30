@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Log in to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v4
         with:
           #registry: docker.io or ghcr.io or any other registry with the url - If not set then will default to Docker Hub
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -22,7 +22,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/python-flask-app:latest                  #latest tag
-            ${{ secrets.DOCKER_USERNAME }}/python-flask-app:${{ github.sha }}       #hash of the commit as tag
-            ${{ secrets.DOCKER_USERNAME }}/python-flask-app:${{ github.ref_name }}  #branch name as tag
+            ${{ secrets.DOCKER_USERNAME }}/python-flask-app-github-actions:latest                  #latest tag
+            ${{ secrets.DOCKER_USERNAME }}/python-flask-app-github-actions:${{ github.sha }}       #hash of the commit as tag
+            ${{ secrets.DOCKER_USERNAME }}/python-flask-app-github-actions:${{ github.ref_name }}  #branch name as tag
 
