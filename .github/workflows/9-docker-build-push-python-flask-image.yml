@@ -16,14 +16,13 @@ jobs:
           username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-
-      - name: Build and push Docker image
+      - name: Build and push Docker image to default registry (Docker Hub)
         uses: docker/build-push-action@v7
         with:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:latest                  #latest tag
-            ${{ secrets.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:${{ github.sha }}       #hash of the commit as tag
-            ${{ secrets.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:${{ github.ref_name }}  #branch name as tag
+            ${{ vars.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:latest                  #latest tag
+            ${{ vars.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:${{ github.sha }}       #hash of the commit as tag
+            ${{ vars.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:${{ github.ref_name }}  #branch name as tag
 
