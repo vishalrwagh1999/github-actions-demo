@@ -5,7 +5,7 @@ on:
      # - main
     paths:
       - "**.html"
-      - '**.yml'
+     # - '**.yml'
   workflow_dispatch:
 jobs:
   index_html_change_run:
