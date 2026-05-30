@@ -14,7 +14,7 @@ jobs:
         with:
           #registry: docker.io or ghcr.io or any other registry with the url - If not set then will default to Docker Hub
           username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v7
