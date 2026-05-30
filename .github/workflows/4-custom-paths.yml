@@ -1,7 +1,7 @@
 name: custom paths is changes then run
 on:
   push:
-    branches:
+    branches:  #if any changes happen in given paths then automatically run the job else manually approve it.
       - main
     paths:
       - "**.html"
@@ -12,5 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: after changing index.html file this job will run
-        run: echo "fter changing index.html file this job will run yessssssssss" #orignal commands not added yet this is for practice only
+        run: echo "after changing index.html file this job will run yessssssssss" #orignal commands not added yet this is for practice only
       
