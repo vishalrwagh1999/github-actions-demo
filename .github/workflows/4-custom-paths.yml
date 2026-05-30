@@ -1,11 +1,11 @@
 name: custom paths is changes then run
 on:
   push:
-    #branches:  #if any changes happen in given paths then automatically run the job else manually approve it.
-     # - main
+    branches:  #if any changes happen in given paths then automatically run the job else manually approve it.
+      - main
     paths:
       - "**.html"
-     # - '**.yml'
+     # - '**.yml' #this also works, commented becz changing the .yml file multiple times, and this job will run.
   workflow_dispatch:
 jobs:
   index_html_change_run:
