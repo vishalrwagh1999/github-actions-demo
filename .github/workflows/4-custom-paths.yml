@@ -1,8 +1,8 @@
 name: custom paths is changes then run
 on:
   push:
-    branches:  #if any changes happen in given paths then automatically run the job else manually approve it.
-      - main
+    #branches:  #if any changes happen in given paths then automatically run the job else manually approve it.
+     # - main
     paths:
       - "**.html"
       - '**.yml'
