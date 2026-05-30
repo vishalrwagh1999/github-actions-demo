@@ -41,7 +41,7 @@ jobs:
         - name: deploy the code on server
           run: echo "deploy the code on server ec2 or cloud" #orignal commands not added yet this is for practice only
 
-           deploy-on-stage:
+  deploy-on-stage:
       #if: ${{ github.event.inputs.environment == 'dev' || github.event.inputs.environment == 'stage' || github.event.inputs.environment == 'prod' }} #env condition for deploy job
       #if: inputs.environment == 'dev' || inputs.environment == 'stage' || inputs.environment == 'prod' #env condition for deploy job
       if: inputs.environment == 'stage' #env condition for deploy job on stage environment only
@@ -51,7 +51,7 @@ jobs:
         - name: deploy the code on server
           run: echo "deploy the code on server ec2 or cloud" #orignal commands not added yet this is for practice only
 
-           deploy-on-prod:
+  deploy-on-prod:
       #if: ${{ github.event.inputs.environment == 'dev' || github.event.inputs.environment == 'stage' || github.event.inputs.environment == 'prod' }} #env condition for deploy job
       #if: inputs.environment == 'dev' || inputs.environment == 'stage' || inputs.environment == 'prod' #env condition for deploy job
       if: inputs.environment == 'prod' #env condition for deploy job on stage environment only
