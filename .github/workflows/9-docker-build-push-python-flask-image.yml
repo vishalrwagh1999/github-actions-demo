@@ -13,7 +13,7 @@ jobs:
         uses: docker/login-action@v4
         with:
           #registry: docker.io or ghcr.io or any other registry with the url - If not set then will default to Docker Hub
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push Docker image
