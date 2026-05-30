@@ -1,0 +1,6 @@
+---
+name: build-push-python-flask-docker-image-to-dockerhub
+on:
+  workflow_dispatch:
+jobs:
+  build-push-python-flask-docker-image-to-dockerhub:
