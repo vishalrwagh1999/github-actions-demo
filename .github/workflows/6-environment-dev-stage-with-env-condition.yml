@@ -31,10 +31,30 @@ jobs:
       steps:
         - name: test using tivy or jemeter junit
           run: echo "testing commands" #orignal commands not added yet this is for practice only
-  deploy:
+  deploy-on-dev:
+      #if: ${{ github.event.inputs.environment == 'dev' || github.event.inputs.environment == 'stage' || github.event.inputs.environment == 'prod' }} #env condition for deploy job
+      #if: inputs.environment == 'dev' || inputs.environment == 'stage' || inputs.environment == 'prod' #env condition for deploy job
+      if: inputs.environment == 'dev' #env condition for deploy job on stage environment only
+      needs: [build,test]
+      runs-on: ubuntu-latest
+      steps:
+        - name: deploy the code on server
+          run: echo "deploy the code on server ec2 or cloud" #orignal commands not added yet this is for practice only
+
+           deploy-on-stage:
       #if: ${{ github.event.inputs.environment == 'dev' || github.event.inputs.environment == 'stage' || github.event.inputs.environment == 'prod' }} #env condition for deploy job
       #if: inputs.environment == 'dev' || inputs.environment == 'stage' || inputs.environment == 'prod' #env condition for deploy job
       if: inputs.environment == 'stage' #env condition for deploy job on stage environment only
+      needs: [build,test]
+      runs-on: ubuntu-latest
+      steps:
+        - name: deploy the code on server
+          run: echo "deploy the code on server ec2 or cloud" #orignal commands not added yet this is for practice only
+
+           deploy-on-prod:
+      #if: ${{ github.event.inputs.environment == 'dev' || github.event.inputs.environment == 'stage' || github.event.inputs.environment == 'prod' }} #env condition for deploy job
+      #if: inputs.environment == 'dev' || inputs.environment == 'stage' || inputs.environment == 'prod' #env condition for deploy job
+      if: inputs.environment == 'prod' #env condition for deploy job on stage environment only
       needs: [build,test]
       runs-on: ubuntu-latest
       steps:
