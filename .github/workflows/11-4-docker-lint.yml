@@ -1,0 +1,15 @@
+name: docker lint/scan
+
+on:
+    workflow_call:
+jobs:
+    docker-lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout the code
+              uses: actions/checkout@v4
+
+            - name: Run Hadolint to lint Dockerfile
+              uses: hadolint/hadolint-action@v2
+              with:
+                  dockerfile: ./Dockerfile        

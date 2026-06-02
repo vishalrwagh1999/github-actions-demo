@@ -11,6 +11,9 @@ jobs:
         uses: ./.github/workflows/11-2-secret-scan.yml
     dependency-scan:
         uses: ./.github/workflows/11-3-dependency-scan.yml
+    docker-lint:
+        uses: ./.github/workflows/11-4-docker-lint.yml
+
 
 
     
