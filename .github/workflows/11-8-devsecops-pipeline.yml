@@ -18,6 +18,11 @@ jobs:
         uses: ./.github/workflows/11-5-docker-build-push-hub.yml
         secrets: inherit # To pass secrets from this workflow to the called workflow like dockerhub token for pushing the image
 
+    trivy-image-scan:
+        needs: docker-build-push
+        uses: ./.github/workflows/11-6-trivy-image-scan.yml
+        secrets: inherit # To pass secrets from this workflow to the called workflow like dockerhub token for scanning the image
+
 
 
     
