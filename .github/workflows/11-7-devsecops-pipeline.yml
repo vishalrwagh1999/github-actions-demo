@@ -7,4 +7,8 @@ on:
 jobs:
     code-quality:
         uses: ./.github/workflows/11-1-code-quality.yml
+    secret-scan:
+        uses: ./.github/workflows/11-2-secret-scan.yml
+        
+
     
