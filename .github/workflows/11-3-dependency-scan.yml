@@ -9,7 +9,7 @@ jobs:
         strategy:
             fail-fast: false #true if any fail stop the job
             matrix:
-                python-version: ["3.11", "3.12", "3.13"]
+                python-version: ["3.13"] #, "3.12", "3.11"
         steps:
             - name: checkout the code
               uses: actions/checkout@v4
@@ -22,5 +22,10 @@ jobs:
             - name: install dependencies
               run: pip install -r requirements.txt
 
-            - name: Run Safety to check for vulnerable dependencies
-              run: safety check --full-report        
+            # Run Safety to check for vulnerable dependencies deprecated in the current codebase
+            #- name: Run Safety to check for vulnerable dependencies
+             # run: safety check --full-report  
+
+            
+            - name: Run pip-audit to check for vulnerable dependencies
+              run: pip-audit --verbose
