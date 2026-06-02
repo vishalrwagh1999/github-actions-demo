@@ -1,0 +1,10 @@
+name: END to END DevSecOps pipeline
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    code-quality:
+        uses: ./.github/workflows/11-1-code-quality.yml
+    
