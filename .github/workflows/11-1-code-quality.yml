@@ -5,7 +5,7 @@ on:
 
 
 jobs:
-    code_quality:
+    python-code-quality-linting-SAST-scan:
         runs-on: ubuntu-latest
         strategy:
             fail-fast: false #true if any fail stop the job

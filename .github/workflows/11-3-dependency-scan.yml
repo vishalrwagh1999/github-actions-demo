@@ -4,7 +4,7 @@ on:
     workflow_call:
 
 jobs:
-    dependency_scan:
+    code-dependency_scan:
         runs-on: ubuntu-latest
         strategy:
             fail-fast: false #true if any fail stop the job
