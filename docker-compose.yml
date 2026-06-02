@@ -1,5 +1,12 @@
 services:
   web:
-    image: ${{ vars.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:latest
+    image: ${DOCKERHUB_USERNAME}/python-flask-app-github-actions:latest
     ports:
       - "80:80"
+
+
+#services:
+  #web:
+   # image: ${ vars.DOCKERHUB_USERNAME }/python-flask-app-github-actions:latest
+   # ports:
+   #   - "80:80"
