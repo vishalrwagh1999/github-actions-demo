@@ -12,5 +12,5 @@ def health():
     return 'Server is up and running'
 
 @app.route('/healthy')
-def health():
-    return 'Server is up and healthy
+def healthy():
+    return 'Server is up and healthy'
