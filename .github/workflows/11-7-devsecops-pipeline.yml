@@ -16,6 +16,7 @@ jobs:
     docker-build-push:
         needs: [code-quality,secret-scan,dependency-scan,docker-lint]
         uses: ./.github/workflows/11-5-docker-build-push-hub.yml
+        secrets: inherit # To pass secrets from this workflow to the called workflow like dockerhub token for pushing the image
 
 
 
