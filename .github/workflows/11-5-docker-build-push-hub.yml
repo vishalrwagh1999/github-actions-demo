@@ -1,0 +1,27 @@
+name: docker build and push image to docker hub
+
+on:
+    workflow_call: 
+jobs:
+  docker-build-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v4
+        with:
+          #registry: docker.io or ghcr.io or any other registry with the url - If not set then will default to Docker Hub
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image to default registry (Docker Hub)
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true     #latest tag  #hash of the commit as tag    #branch name as tag
+          tags: |
+            ${{ vars.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:latest                 
+            ${{ vars.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:${{ github.sha }}
+
