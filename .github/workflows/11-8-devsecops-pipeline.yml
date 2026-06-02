@@ -24,7 +24,7 @@ jobs:
         secrets: inherit # To pass secrets from this workflow to the called workflow like dockerhub token for scanning the image
     deploy-to-ec2:
         needs: trivy-image-scan
-        uses: ./.github/workflows/11-7-deploy-to-ec2.yml
+        uses: ./.github/workflows/11-7-deploy-on-ec2-prod.yml
         secrets: inherit # To pass secrets from this workflow to the called workflow like dockerhub token for pulling the image in ec2 and deploying
 
 
