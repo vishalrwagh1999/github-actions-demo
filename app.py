@@ -10,3 +10,7 @@ def hello_world():
 @app.route('/health')
 def health():
     return 'Server is up and running'
+
+@app.route('/healthy')
+def health():
+    return 'Server is up and healthy
