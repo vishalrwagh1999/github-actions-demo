@@ -1,17 +1,24 @@
-name: Hello udaan
-
+name: Hello udaan 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      - develop
-      - 'feature/*'
+    inputs:
+      run_on_main:
+        description: 'Run on main branch?'
+        type: boolean
+        default: true
+      run_on_develop:
+        description: 'Run on develop branch?'
+        type: boolean
+        default: false
 
-jobs:
-  hello-say:
-    runs-on: ubuntu-latest
-    steps:
-      - name: just say hellow
-        run: echo "udaan fo the github actions"
-    
+jobs: 
+  hello-say: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - name: Run for Main
+        if: ${{ inputs.run_on_main == true }}
+        run: echo "Running actions for main branch"
+
+      - name: Run for Develop
+        if: ${{ inputs.run_on_develop == true }}
+        run: echo "Running actions for develop branch"
