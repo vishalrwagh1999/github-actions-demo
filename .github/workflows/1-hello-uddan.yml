@@ -1,0 +1,11 @@
+name: Hello udaan
+
+on:
+  workflow_dispatch:
+jobs:
+  hello-say:
+    runs-on: ubuntu-latest
+    steps:
+      - name: just say hellow
+        run: echo "udaan fo the github actions"
+    
