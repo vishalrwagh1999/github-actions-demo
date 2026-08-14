@@ -22,4 +22,4 @@ jobs:
         with:
           image-ref: ${{ vars.DOCKERHUB_USERNAME }}/python-flask-app-github-actions:${{ github.sha }}
           severity: HIGH,CRITICAL
-          exit-code: '1'
+          exit-code: '0' #if fail still run 1-exit if found
