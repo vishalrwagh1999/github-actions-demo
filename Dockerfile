@@ -1,4 +1,4 @@
-# Base image (OS)
+# Base image (OS) 14 Aug 2026
 
 FROM python:3.14-slim
 
